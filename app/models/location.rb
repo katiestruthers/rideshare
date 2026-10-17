@@ -1,3 +1,19 @@
+# == Schema Information
+#
+# Table name: locations
+#
+#  id         :bigint           not null, primary key
+#  address    :string           not null
+#  city       :string
+#  position   :point            not null
+#  state      :string(2)        not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+# Indexes
+#
+#  index_locations_on_address  (address) UNIQUE
+#
 class Location < ApplicationRecord
   validates :address,
             presence: true,

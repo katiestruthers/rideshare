@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'activerecord-import', '~> 1.5'
 gem 'bcrypt', '~> 3.1' # Use ActiveModel has_secure_password
+gem 'fast_count', '~> 0.3'
 gem 'fast_jsonapi', '~> 1.5'
 gem 'geocoder', '~> 1.8'
 gem 'jwt', '~> 3'
@@ -12,7 +13,6 @@ gem 'prosopite', '~> 1.4' # identify N+1 queries
 gem 'puma', '~> 6.4'
 gem 'rails', '>= 7.2', '~> 7.2' # , git: 'https://github.com/rails/rails.git'
 gem 'whenever', '~> 1.0', require: false # manage scheduled jobs
-gem 'fast_count', '~> 0.3'
 
 # assets gems default Rails 7 app
 gem 'importmap-rails', '~> 1.2'
@@ -30,6 +30,7 @@ gem 'strong_migrations', '~> 2.4' # Use safe Migration patterns
 
 group :development, :test do
   gem 'active_record_doctor', '~> 1.15'
+  gem 'annotaterb'
   gem 'benchmark-ips', '~> 2.14'
   gem 'benchmark-memory', '~> 0.2'
   gem 'database_consistency', '~> 2.0'

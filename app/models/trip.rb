@@ -1,3 +1,26 @@
+# == Schema Information
+#
+# Table name: trips
+#
+#  id              :bigint           not null, primary key
+#  completed_at    :datetime
+#  rating          :integer
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  driver_id       :integer          not null
+#  trip_request_id :bigint           not null
+#
+# Indexes
+#
+#  index_trips_on_driver_id        (driver_id)
+#  index_trips_on_rating           (rating)
+#  index_trips_on_trip_request_id  (trip_request_id)
+#
+# Foreign Keys
+#
+#  fk_rails_...  (driver_id => users.id)
+#  fk_rails_...  (trip_request_id => trip_requests.id)
+#
 class Trip < ApplicationRecord
   belongs_to :trip_request
   belongs_to :driver, class_name: 'User', counter_cache: true

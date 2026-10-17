@@ -1,3 +1,26 @@
+# == Schema Information
+#
+# Table name: trip_requests
+#
+#  id                :bigint           not null, primary key
+#  created_at        :datetime         not null
+#  updated_at        :datetime         not null
+#  end_location_id   :integer          not null
+#  rider_id          :integer          not null
+#  start_location_id :integer          not null
+#
+# Indexes
+#
+#  index_trip_requests_on_end_location_id    (end_location_id)
+#  index_trip_requests_on_rider_id           (rider_id)
+#  index_trip_requests_on_start_location_id  (start_location_id)
+#
+# Foreign Keys
+#
+#  fk_rails_...  (end_location_id => locations.id)
+#  fk_rails_...  (rider_id => users.id)
+#  fk_rails_...  (start_location_id => locations.id)
+#
 class TripRequest < ApplicationRecord
   belongs_to :rider, class_name: 'User'
   belongs_to :start_location, class_name: 'Location'

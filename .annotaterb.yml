@@ -1,0 +1,3 @@
+exclude_serializers: true
+exclude_fixtures: true
+exclude_tests: true
