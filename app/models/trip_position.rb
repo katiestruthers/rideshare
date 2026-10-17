@@ -8,6 +8,10 @@
 #  updated_at :datetime         not null
 #  trip_id    :bigint           not null
 #
+# Indexes
+#
+#  index_trip_positions_on_trip_id  (trip_id)
+#
 # Foreign Keys
 #
 #  fk_rails_...  (trip_id => trips.id)

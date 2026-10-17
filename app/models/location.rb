@@ -23,7 +23,7 @@ class Location < ApplicationRecord
   validates :position, presence: true
   validates :state,
             presence: true,
-            length: { is: 2 }
+            length: { minimum: 2, maximum: 2 }
 
   geocoded_by :address
 

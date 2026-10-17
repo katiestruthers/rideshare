@@ -15,8 +15,9 @@
 #
 # Indexes
 #
-#  index_users_on_email      (email) UNIQUE
-#  index_users_on_last_name  (last_name)
+#  index_users_on_drivers_license_number  (drivers_license_number) UNIQUE
+#  index_users_on_email                   (email) UNIQUE
+#  index_users_on_last_name               (last_name)
 #
 class Driver < User
   has_many :trips

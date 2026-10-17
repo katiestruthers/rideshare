@@ -19,7 +19,7 @@ class Vehicle < ApplicationRecord
 
   attr_accessor :status
 
-  has_many :vehicle_reservations, dependent: :destroy
+  has_many :vehicle_reservations, dependent: :delete_all
 
   enum :status, {
     draft: VehicleStatus::DRAFT,

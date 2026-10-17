@@ -13,7 +13,8 @@
 #
 # Indexes
 #
-#  index_vehicle_reservations_on_vehicle_id  (vehicle_id)
+#  index_vehicle_reservations_on_trip_request_id  (trip_request_id)
+#  index_vehicle_reservations_on_vehicle_id       (vehicle_id)
 #
 # Foreign Keys
 #
@@ -26,4 +27,7 @@ class VehicleReservation < ApplicationRecord
 
   validates :vehicle_id, :starts_at, :ends_at,
             presence: true
+
+  validates :canceled,
+            inclusion: { in: [true, false] }
 end

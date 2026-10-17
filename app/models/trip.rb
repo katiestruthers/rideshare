@@ -14,7 +14,7 @@
 #
 #  index_trips_on_driver_id        (driver_id)
 #  index_trips_on_rating           (rating)
-#  index_trips_on_trip_request_id  (trip_request_id)
+#  index_trips_on_trip_request_id  (trip_request_id) UNIQUE
 #
 # Foreign Keys
 #
