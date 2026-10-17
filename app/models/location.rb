@@ -12,7 +12,8 @@
 #
 # Indexes
 #
-#  index_locations_on_address  (address) UNIQUE
+#  index_locations_on_address         (address) UNIQUE
+#  index_locations_on_city_and_state  (city,state) UNIQUE
 #
 class Location < ApplicationRecord
   validates :address,
