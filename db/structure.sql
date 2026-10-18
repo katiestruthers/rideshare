@@ -215,7 +215,8 @@ CREATE TABLE rideshare.trips (
     rating integer,
     created_at timestamp(6) without time zone NOT NULL,
     updated_at timestamp(6) without time zone NOT NULL,
-    CONSTRAINT rating_check CHECK (((rating >= 1) AND (rating <= 5)))
+    CONSTRAINT rating_check CHECK (((rating >= 1) AND (rating <= 5))),
+    CONSTRAINT trips_completed_after_created CHECK ((completed_at > created_at))
 );
 
 
@@ -433,7 +434,8 @@ CREATE TABLE rideshare.vehicle_reservations (
     starts_at timestamp with time zone NOT NULL,
     ends_at timestamp with time zone NOT NULL,
     created_at timestamp(6) without time zone NOT NULL,
-    updated_at timestamp(6) without time zone NOT NULL
+    updated_at timestamp(6) without time zone NOT NULL,
+    CONSTRAINT minimum_reservation_length CHECK ((ends_at >= (starts_at + '00:30:00'::interval)))
 );
 
 
@@ -808,8 +810,12 @@ ALTER TABLE ONLY rideshare.trip_requests
 SET search_path TO rideshare;
 
 INSERT INTO "schema_migrations" (version) VALUES
+('20261018134933'),
+('20261018134800'),
 ('20261017214330'),
 ('20261017214329'),
+('20261017191155'),
+('20261017185645'),
 ('20261017183410'),
 ('20231220043547'),
 ('20231218215836'),
